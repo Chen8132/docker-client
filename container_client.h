@@ -9,7 +9,6 @@
 using namespace std;
 
 
-
 class ContainerClient : public DockerClient {
 
 public:
