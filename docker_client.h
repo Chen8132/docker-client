@@ -1,3 +1,6 @@
+#ifndef DOCKER_CLIENT_H
+#define DOCKER_CLIENT_H
+
 #include <string>
 #include <iostream>
 #include <json/json.h>
@@ -30,3 +33,5 @@ protected:
 	string uri;
 
 };
+
+#endif

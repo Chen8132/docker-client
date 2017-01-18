@@ -13,7 +13,8 @@ using namespace std;
 class ContainerClient : public DockerClient {
 
 public:
-	 ContainerClient(string host):DockerClient(host){};
+	ContainerClient():DockerClient(){};
+	ContainerClient(string host):DockerClient(host){};
 
 
 
