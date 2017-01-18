@@ -7,7 +7,7 @@ using namespace std;
 class DockerClient{
 public:
 	DockerClient():uri("http://127.0.0.1"){
-		cout << "hello world!" << endl;
+		//cout << "hello world!" << endl;
 		RestClient::init();
 	}
 	DockerClient(string host):uri(host){
