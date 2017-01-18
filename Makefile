@@ -12,7 +12,7 @@ LIBS += -lpthread -ldl -lm  -lz -lm -lssl -lcrypto -lidn -lrt
 
 ##TLV OBJECT
 OBJS =  restclient/connection.o restclient/callbacks.o restclient/restclient.o \
-        json/jsoncpp.o container_client.o docker_client.o network_client.o
+        json/jsoncpp.o container_client.o docker_client.o network_client.o image_client.o
 
 
 %.o: %.c
