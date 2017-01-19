@@ -2,6 +2,7 @@
 #include "container_client.h"
 #include "network_client.h"
 #include "image_client.h"
+#include "misc_client.h"
 using namespace std;
 
 int main(int argc, char const *argv[]){
@@ -14,5 +15,10 @@ int main(int argc, char const *argv[]){
 	ImageClient II;
 	II.list_image();
 	cout<<"hi"<<endl;
+
+	cout<<"hello"<<endl;
+	MiscClient tt;
+	tt.display_system_wide();
+	cout<<"hello"<<endl;
 	return 0;
 }
