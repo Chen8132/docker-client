@@ -11,14 +11,9 @@ int main(int argc, char const *argv[]){
 	cc.inspect_container("thirsty_pare");
 	NetworkClient nn;
 	nn.list_network("{\"type\":{\"custom\":true}}");
-	cout<<"hi"<<endl;
 	ImageClient II;
 	II.list_image(true);
-	cout<<"hi"<<endl;
-
-	cout<<"hello"<<endl;
 	MiscClient tt;
 	tt.display_system_wide();
-	cout<<"hello"<<endl;
 	return 0;
 }
