@@ -1,0 +1,48 @@
+PLATFORM:= X86
+#PLATFORM := ARM
+
+export PLATFORM
+
+CURDIR = $(PWD)
+
+ifeq ($(PLATFORM),ARM)
+CROSS_COMPILE ?= arm-histbv300-linux-
+export CROSS_COMPILE
+endif
+
+# Define make variables
+AS		:= $(CROSS_COMPILE)as
+LD		:= $(CROSS_COMPILE)ld
+CC		:= $(CROSS_COMPILE)gcc
+# NOTE: We must use c++ and not g++ to avoid GPL contamination
+CXX		:= $(CROSS_COMPILE)g++
+AR		:= $(CROSS_COMPILE)ar
+NM		:= $(CROSS_COMPILE)nm
+STRIP		:= $(CROSS_COMPILE)strip
+OBJCOPY		:= $(CROSS_COMPILE)objcopy
+OBJDUMP		:= $(CROSS_COMPILE)objdump
+RANLIB		:= $(CROSS_COMPILE)ranlib
+
+CPP		= $(CC) -E
+CP		= cp -p
+RM		= rm -rf
+SORT 	= sort
+SED 	= sed
+TOUCH	= touch
+MKDIR 	= mkdir -p
+
+export AS LD CC CXX AR NM STRIP OBJCOPY OBJDUMP RANLIB CPP CP RM SORT SED TOUCH MKDIR
+     
+LDFLAGS += -L./ 	 
+LIBS = -lcurl
+CFLAGS += -Iinclude
+CXXFLAGS += -Iinclude
+
+ifeq ($(PLATFORM),X86)
+
+CXXFLAGS += -std=gnu++11
+
+else                                                   
+
+endif
+
